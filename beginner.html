@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Python Beginner</title>
+    <link rel="shortcut icon" href="./favicon.ico"/>
+    <link rel="stylesheet" href="./dist/reveal.css" />
+    <link rel="stylesheet" href="./dist/theme/black.css" id="theme" />
+    <link rel="stylesheet" href="./css/highlight/zenburn.css" />
+
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section ><section data-markdown><script type="text/template">
+
+# Python Beginner
+
+</script></section><section data-markdown><script type="text/template">
+
+### Slides
+https://bluecolor.github.io/slides
+
+</script></section><section data-markdown><script type="text/template">
+
+### Instructor
+
+Ceyhun Kerti - Blue
+
+- http://www.bluecolor.io
+- https://github.com/bluecolor
+- Full stack engineer
+- Areas:
+  - DWH
+  - Bigdata analytics, Data science
+  - Python, Scala, Golang, Ruby
+  - Javascript, Vue
+  - Flask, FastAPI, Django, Spring, Rails
+
+</script></section><section data-markdown><script type="text/template">
+
+### Introduction of Participants
+
+- Organization?
+- Experience level?
+- Expectations?
+
+</script></section><section data-markdown><script type="text/template">
+
+### Code
+
+https://github.com/bluecolor/course-code
+
+
+</script></section></section><section ><section data-markdown><script type="text/template">
+
+## Python Overview
+
+</script></section><section data-markdown><script type="text/template">
+
+### Language
+
+  - Dynamic language
+  - Simple, easy to learn syntax
+  - [One of the most popular languages](https://www.tiobe.com/tiobe-index)
+  - Used in many areas like; Automation, scraping, web dev, data science and even gui
+
+</script></section><section data-markdown><script type="text/template">
+
+### Python Versions, Releases and PEP
+
+- PEP: Python Enhancement Proposal
+- PEP 602: Major versions are released predictably every twelve months, in October every year.
+- Current version 3.9
+- Legacy pyhon2 support ended January 1st, 2020
+
+</script></section><section data-markdown><script type="text/template">
+
+```py
+
+a = 3
+b = 5
+print(a*b)
+
+my_var = a
+
+if my_var > 1:
+    print('Hello there')
+```
+
+</script></section></section><section ><section data-markdown><script type="text/template">
+
+## Installation
+
+</script></section><section data-markdown><script type="text/template">
+
+### Windows
+
+- Check version with `python --version`
+- MS Store
+- https://www.python.org
+
+</script></section><section data-markdown><script type="text/template">
+
+### Linux - Ubuntu
+
+- Check version with `python --version`
+- `sudo apt install python3`
+- Install from https://www.python.org
+
+</script></section><section data-markdown><script type="text/template">
+
+### What is included?
+
+- Python interpreter
+- PIP package manager (PIP: Recursive acronym PIP Installs Packages)
+- Python repl
+- IDLE in windows
+
+
+</script></section></section><section ><section data-markdown><script type="text/template">
+
+## Try Pthon
+
+### Local Pthon Console
+- `python`
+- or install `bpython` `pip install bpython`
+- IDLE in windows
+- exit()
+
+</script></section><section data-markdown><script type="text/template">
+
+### Short Break: Zen of Python
+
+- `python` and `import this`
+
+</script></section><section data-markdown><script type="text/template">
+
+### Try Online
+
+- https://www.python.org/shell
+- https://mybinder.org/
+- https://colab.research.google.com/notebooks/intro.ipynb#recent=true
+- [Try Jupyter Lab](https://mybinder.org/v2/gh/jupyterlab/jupyterlab-demo/master?urlpath=lab/tree/demo)
+- https://www.programiz.com/python-programming/online-compiler
+- https://repl.it/@enaard/Python-3#main.py
+- ... Search for - python online shell/ide/repl
+
+</script></section></section><section  data-markdown><script type="text/template">
+
+### Variables
+
+- Variables are lower, snake case
+- May contain underscore, letter and digits
+- Are mutable
+
+```py
+a = 1
+my_var = a
+my_var = 1_000_000
+```
+
+</script></section><section  data-markdown><script type="text/template">
+
+## Comments
+
+```py
+# this is a comment
+# another comment
+
+a = 1 # inline comment
+
+"Single line comment"
+
+'''
+Multiline
+comment
+'''
+```
+
+</script></section><section ><section data-markdown><script type="text/template">
+
+## Primitive Data Types
+
+</script></section><section data-markdown><script type="text/template">
+
+### List of Data Types
+
+- int: integer eg. 1, 999, 1_000_000
+- float: floating pint numbers eg. 0.2
+- str: strings eg. "hello", 'there', """Hello there"""
+- bool: boolean eg. True, False
+- none: None (like null, undefined in other langs)
+
+</script></section><section data-markdown><script type="text/template">
+
+### Examples
+
+```py
+    a = 1 # integer
+    b = a / 2 # b is float
+    a = "a string"
+    c = 'another string'
+    ## Floating point surprise
+    1.2 - 1.0
+    """
+    Floating point numbers only have 32 or 64 bits of
+    precision, so the digits are cut off at some point,
+    and the resulting number is 0.199999999999999996
+    in decimal, not 0.2.
+    """
+    a = True
+    b = not a
+```
+
+</script></section><section data-markdown><script type="text/template">
+
+### Strings
+
+Simple strings
+```py
+    a = "a string"
+    b = 'with single quota'
+    c = """
+    multiline string
+    here
+    """
+```
+</script></section><section data-markdown><script type="text/template">
+
+Escaping quotas
+```py
+    a = "escape \" with back-slash"
+```
+Escaping back-slash
+```py
+    a = 'escape \\ back-slash itself'
+```
+
+</script></section><section data-markdown><script type="text/template">
+
+f-strings (string interpolation) introduced in python3
+```py
+    a = "hello"
+    print(f"${a} wold")
+```
+string concatanation
+```py
+    a = "hello" + " " + "there"
+    # or use f-strings
+```
+
+</script></section><section data-markdown><script type="text/template">
+
+## Type Conversions
+
+### What is the type of a variable?
+```py
+    a = 1 / 2
+    type(a)
+    type("hello there")
+```
+
+</script></section><section data-markdown><script type="text/template">
+
+### Converting types
+
+Types can be converted to others with bultin methods
+Examples;
+```py
+    a = 3 / 2
+    type(a)
+    b = int(a)
+    type(b)
+    type(str(b))
+    x = "1_000"
+    int(x)
+    y = "Hello"
+    int(y)
+```
+
+</script></section></section><section ><section data-markdown><script type="text/template">
+
+### Simple Data Structures
+
+- List
+- Dict
+- Tupple
+
+</script></section><section data-markdown><script type="text/template">
+
+### List
+
+A sequence collection of composite or primitive types
+```py
+    a = [1, 2, 3]
+    b = [a, [1, 2]]
+```
+Accessing list items, zero based indexing
+```py
+    print(a[0])
+    print(b[1][1])
+```
+
+</script></section><section data-markdown><script type="text/template">
+
+### Dictionary
+
+A collection/map of named composite or primitive types
+```py
+    a = {
+        "name": "John Doe",
+        "email": 'johd.doe@bluecolor.io',
+        "id": 24132132,
+        "is_active": True
+    }
+    b = dict("name"="John")
+```
+Accessing dict items
+```py
+    print(a["name"])
+    a["is_active"] = False
+```
+
+</script></section><section data-markdown><script type="text/template">
+
+### Tupples
+
+Similar to lists but immutable
+```py
+    a = (1, "hello", False)
+```
+Accessing tupples, similar to lists
+```py
+    print(a[1])
+```
+
+</script></section><section data-markdown><script type="text/template">
+
+### Operations With Data Structures
+
+</script></section><section data-markdown><script type="text/template">
+
+### Dictionary operations
+
+get, keys, values, pop, items ... see bpython for full list
+```py
+    a = {"name": "John", "phone": "+44234299"}
+    a.get("name")
+    # a["surname"] vs a.get("surname") vs a.get("surname", "Doe")
+    list(a.keys())
+```
+
+spreading or concatanating dictionaries
+```py
+    a = {"name": "John"}
+    b = {**a, "surname": "Doe", "gender": "male"}
+    print(b)
+    len(b)
+```
+
+</script></section><section data-markdown><script type="text/template">
+
+### List operations
+
+pop, reverse, sort, count ... see bpython for full list
+```py
+    a = [1, 2, 2, 3]
+    a.pop()
+    a.count(1)
+    len(a)
+```
+
+</script></section><section data-markdown><script type="text/template">
+
+### Exercises
+
+- Create a data structure for an entity with the following attributes
+```
+  name => Emile Zola
+  gender => Male
+  birth date => 1840
+  books => Germinal, The Human Beast, The Game is Over
+```
+- Access the last book of the above entity
+- Create a tupple with 3 items
+- Assign the first two items if the above tupple to variables a and b (hint: unpack)
+- Create a sample letter indexed phonebook with entities name, address(city enough) and phone,
+
+</script></section></section><section ><section data-markdown><script type="text/template">
+
+## References and Mutations
+
+What is the value of variable a after this?
+```py
+    a = [1,2]
+    b = a
+    b.append(1)
+```
+</script></section><section data-markdown><script type="text/template">
+
+Object assignments are made via references in the background
+The value is not copied a and b points to same object
+
+</script></section><section data-markdown><script type="text/template">
+
+What is the value of variable a after this?
+```py
+    a = 1
+    b = a
+    b = 2
+```
+
+</script></section><section data-markdown><script type="text/template">
+
+Primitive types are assigned with values. each time a new memory address is
+allocated for assignment.
+
+</script></section><section data-markdown><script type="text/template">
+Keeping original value in object assignments
+
+```py
+    a = [2, 3]
+    # copy values / clone
+    b = a.copy()
+    b.append()
+
+    # derive b from a
+    b = a + [1]
+```
+</script></section><section data-markdown><script type="text/template">
+Direct mutations and assignments
+
+```py
+    a = [1,2]
+    a.append(3)
+    # or
+    a = a + [4]
+```
+
+</script></section></section><section  data-markdown><script type="text/template">
+
+## Help and Documentation
+
+```py
+    help(dict)
+```
+
+
+</script></section><section ><section data-markdown><script type="text/template">
+
+## Editors
+
+    - VSCode
+    - PyCharm
+    - Sublime
+    - ...
+
+</script></section><section data-markdown><script type="text/template">
+
+### VSCode
+
+- Opening project
+- Project management plugin
+- Installing python plugin
+- Selecting python interpreter
+- Running and Debugging
+
+
+</script></section></section><section ><section data-markdown><script type="text/template">
+
+## Builtin Functions and Standard Libraries
+
+</script></section><section data-markdown><script type="text/template">
+
+### Builtin Functions
+
+Builtin functions are available to the context by default.
+No need to import them. We already saw some of them like;
+print(), type(), len()
+
+</script></section><section data-markdown><script type="text/template">
+
+- print()
+- input()
+- len()
+- max()
+- min()
+- open()
+- range()
+- round()
+- sorted()
+- sum()
+- type()
+
+</script></section><section data-markdown><script type="text/template">
+
+### Standard Libraries
+
+See https://docs.python.org/3/library/index.html
+Examples;
+```py
+import random
+
+random.choice([1,2])
+```
+```py
+import pprint
+import math
+from urllib.request import urlopen
+
+print(math.floor(1.2))
+
+content = urlopen("https://google.com").read()
+pprint(content)
+```
+
+</script></section></section><section ><section data-markdown><script type="text/template">
+
+## Control Structures
+
+</script></section><section data-markdown><script type="text/template">
+
+### Definition
+
+Control structures enables the application flow to be repeated or filtred.
+- Conditionals
+- Loops
+
+</script></section><section data-markdown><script type="text/template">
+
+### Conditionals
+
+ if statement
+ ```py
+a = 1
+if a > 3:
+    print("greater than 3")
+else:
+    print("less than 3")
+ ```
+single line if statement
+```py
+a = 1 if 2 > 3 else 10
+```
+
+</script></section><section data-markdown><script type="text/template">
+
+chaning conditions with "elif"
+```py
+a = 3
+if type(a).__name__ == 'int':
+    print("Is int")
+elif type(a).__name__ == 'str':
+    print("Is stirng")
+else:
+    print("Other")
+```
+No switch-case!
+
+</script></section><section data-markdown><script type="text/template">
+
+### Loops
+
+Wile loops
+```py
+a = 1
+while a < 10:
+    print(a)
+    a = a + 1
+```
+For Loops
+```py
+for a in [1,2,3]:
+    print(a)
+
+# or with range
+
+for a in range(3):
+    print(a)
+```
+</script></section><section data-markdown><script type="text/template">
+
+### Continue/Break
+
+Continue
+```py
+a = 1
+while a < 4:
+    if a == 2:
+        continue
+    print(a)
+    a = a + 1
+```
+
+Break
+```py
+a = 1
+while a < 4:
+    if a == 2:
+        break
+    print(a)
+    a = a + 1
+```
+</script></section><section data-markdown><script type="text/template">
+
+### Combining and Chaning Comparisons
+
+Combining operators
+```py
+a = 0
+if (a == 1 or a < 3) and not a:
+    print("Hello")
+```
+
+Chaning operators
+```py
+a = 0
+b = 3
+if a <  b < 10:
+    print("Hello")
+```
+
+</script></section></section><section  data-markdown><script type="text/template">
+
+## Statements with multiple lines
+
+Statements with multiple lines should be enclosed with paranthesis
+```py
+a = (
+    1+2+3 +
+    4+5
+)
+```
+or use escape character
+```py
+a = 1+2+3 + \
+    4+5
+```
+
+</script></section><section ><section data-markdown><script type="text/template">
+
+## Loop and Conditional Excercises
+
+- Create a calendar for 2021 with like this;
+```py
+# program output should be like this.
+# >
+#   2020.01.01 Friday Weekday
+#   2020.01.02 Saturday Weekend
+#   2020.01.03 Sunday Weekend
+#   ....
+#   2020.12.31 Friday Weekday
+#
+```
+
+</script></section><section data-markdown><script type="text/template">
+- Create a coin flip guess program
+```py
+    # > True or False ?:
+    # should handle case insensitive inputs
+    # true, false, yes, no, 1, 0
+    # > Flipping ...
+    # > False you won
+```
+
+- Find the first prime number greater than given input
+```py
+    # > Enter number:
+    # > Should handle input exceptions
+    # > Finding ...
+    # > Firs prime is 23
+```
+
+</script></section><section data-markdown><script type="text/template">
+
+- Find the square root of a number using "Babylonian Method"
+  - [Babylonian Method](https://blogs.sas.com/content/iml/2016/05/16/babylonian-square-roots.html#:~:text=The%20Babylonian%20square%2Droot%20algorithm,Newton%20invented%20his%20general%20procedure.)
+  - [Video tutorial](https://www.youtube.com/results?search_query=+Babylonian+Method)
+
+```py
+# take initial number from input
+#
+# Make an initial guess. Guess any positive number x0.
+# Improve the guess.
+# Apply the formula x1 = (x0 + S / x0) / 2.
+# The number x1 is a better approximation to sqrt(S).
+# Iterate until convergence.
+# Apply the formula xn+1 = (xn + S / xn) / 2
+# until the process converges. Convergence is achieved
+# when the digits of xn+1 and xn agree to
+# as many decimal places as you desire.
+```
+
+</script></section><section data-markdown><script type="text/template">
+
+Homework: Create a random fixture for 2021 with following teams;
+
+```py
+teams = ['besiktas', 'fenerbahce', 'galatasaray','trabzonspor', 'sivasspor', 'bursaspor']
+# should print eg.
+#
+# 2020/1 Week:1 (besiktas, trabzonspor), (fenerbahce, sivasspor), (galatasaray, bursaspor)
+# 2020/1 Week:2 (team, team), (team, team), (team, team)
+# 2020/1 Week:3 ....
+# ...
+# 2020/1 Week:5 ((team, team), ...
+# 2020/2 Week:6 (trabzonspor, besiktas), (sivasspor, fenerbahce), (bursaspor, galatasaray)
+#
+# Notes
+# A team should not play 3 successive matches in home/away
+```
+
+</script></section></section><section ><section data-markdown><script type="text/template">
+
+## Exception Handling
+</script></section><section data-markdown><script type="text/template">
+
+### What is an Exception?
+
+</script></section><section data-markdown><script type="text/template">
+
+### Handling Exceptions
+```py
+my_list = ["1", "3", "-4", "Hello"]
+sum = 0
+for item in my_list:
+    try:
+        sum = sum + int(item)
+    except:
+        print(f"list contains invalid number: {item}")
+        return (False, 0)
+
+    return (True, sum)
+```
+
+</script></section><section data-markdown><script type="text/template">
+
+Every exception in Python inherits from the base Exception.
+```py
+var_1 = 10
+var_2 = 0
+try:
+    result = var_1 / var_2
+    print(result)
+except Exception as e
+    print(e.__class__)
+```
+
+</script></section><section data-markdown><script type="text/template">
+
+Chaning exception handling
+
+```py
+try:
+   ## ...
+   pass
+except NotImplementedError:
+    pass
+except (TypeError, ZeroDivisionError):
+   # can handle multiple exceptions at same time
+   pass
+except:
+   # handle others not above
+   pass
+```
+
+</script></section></section><section ><section data-markdown><script type="text/template">
+
+## Functions
+
+</script></section><section data-markdown><script type="text/template">
+
+## What is a function ?
+
+</script></section><section data-markdown><script type="text/template">
+>   Functions or procedures are abstractions to group
+    set of instructions. Functions may take 0+ arguments and
+    may return 0+ values
+
+</script></section><section data-markdown><script type="text/template">
+
+
+### Defining Functions
+
+Functions starts with a "def" keyword folloed by function name and arguments
+```py
+def my_sum(arg_1, arg_2):
+    s = arg_1 + arg_2
+    return s
+```
+Functions may take optional/default arguments
+
+```py
+def my_phrase(name, city='Istanbul'):
+    return f"My name is {name}. I live in {city}."
+```
+
+</script></section><section data-markdown><script type="text/template">
+
+Function doc strings helps other programmers
+```py
+def my_sum(arg_1, arg_2):
+    """This is my custom summary function"""
+    s = arg_1 + arg_2
+    return s
+
+# you can wiew the docstrings with $> help(my_sum)
+```
+
+</script></section><section data-markdown><script type="text/template">
+Functions may be passed as arguments to other functions
+```py
+def my_average(arg_1, arg_2, my_sum):
+    s = my_sum(arg_1 + arg_2)
+    return s/2
+```
+
+</script></section><section data-markdown><script type="text/template">
+
+### Positional and Named Arguments
+
+Functions can be called with positional and named args.
+```py
+my_sum(1, arg_2=9)
+
+# or with a sugar tip!
+my_vars {"arg_1": 1, "arg_2": 9}
+my_sum(**my_vats)
+```
+
+</script></section><section data-markdown><script type="text/template">
+
+### Variable Length Arguments
+
+Functions may take variable length arugments
+```py
+def my_info(arg_1, arg_2, *other):
+    print(arg_2)
+    for arg in other:
+        print(arg)
+```
+
+</script></section><section data-markdown><script type="text/template">
+
+### Recursion
+```py
+def factorial(n):
+    if n == 1:
+        return 1
+    return (n * factorial(n-1))
+```
+
+</script></section></section><section ><section data-markdown><script type="text/template">
+
+## Function Excercises
+
+- Write a function that checks given string is a plaindrome
+```py
+    def is_plaindrome(s):
+        pass
+
+    param = "racecar"
+    print(is_plaindrome(param))
+    # output$> "racecar" is a plaindrome
+```
+
+</script></section><section data-markdown><script type="text/template">
+
+- Write a function that returns larget and smallest in given arguments
+```py
+    # eg. calling the function
+
+    #$> my_max(1,10)
+    # should print smallest=1 largets=10
+
+    #$> my_max(4,20, 2, -11, 0)
+    # should print smallest=-11 largest=20
+```
+
+</script></section><section data-markdown><script type="text/template">
+
+- Wirite a function that reverses a string
+```py
+#! do not use "hello"[::-1]
+```
+
+- Wirite a function, without using loops, prints the items in a list
+```py
+printme([1,2,3])
+#> 1
+#> 2
+#> 3
+```
+
+- Wirite a function recursively sums given arguments
+```py
+# sum(1, 2, 4)  => 6
+# sum(1)        => 1
+# sum(2,2)      => 4
+```
+
+</script></section><section data-markdown><script type="text/template">
+- Write a function sums the numbers in a list
+```py
+    my_list = ["Hello", 100, "There", 50, "Howdy", -10]
+    sum_umbers(my_list)
+    # should print 140
+```
+- Write a function sums the numbers in a dictionary
+```py
+    entity = {
+        "name": "John Doe",
+        "account_2": 100,
+        "address": "Istanbul",
+        "account_2": 50,
+        "phone": "+90234212312"
+    }
+    sum_numbers(entity)
+    # should print 150
+```
+
+</script></section><section data-markdown><script type="text/template">
+
+- Write a function that sums the results of list of functions
+```py
+    import time
+
+    def my_fun_1():
+        time.sleep(5)
+        return 2
+
+    def my_fun_2():
+        return -5
+
+    my_list = [my_fun_1, my_fun_2]
+
+    def my_sum(my_functions):
+        pass
+        # implementation...
+
+    my_sum(my_list)
+    # should print -3
+```
+
+</script></section><section data-markdown><script type="text/template">
+
+Homework: Write a simple Reverse Polish Notation calculator
+- [reverse polish notation](http://www-stone.ch.cam.ac.uk/documentation/rrf/rpn.html)
+```py
+# should only implement + - *
+# input must be given with spaces(any number of)
+# eg. input
+# $> 10 1 2 + *
+# should print 30
+# $> 4 2 3 + -
+# should print -1
+```
+
+
+</script></section></section><section ><section data-markdown><script type="text/template">
+
+## Linting and Formatting Using VSCODE
+
+</script></section><section data-markdown><script type="text/template">
+
+### What is linting ?
+
+</script></section><section data-markdown><script type="text/template">
+
+Search settings for linting in vscode
+
+### What is formatting ?
+
+</script></section><section data-markdown><script type="text/template">
+
+Search settings and configure a formatter in vscode
+
+
+</script></section></section><section  data-markdown><script type="text/template">
+
+# Thanks
+</script></section></div>
+    </div>
+
+    <script src="./dist/reveal.js"></script>
+
+    <script src="./plugin/markdown/markdown.js"></script>
+    <script src="./plugin/highlight/highlight.js"></script>
+    <script src="./plugin/zoom/zoom.js"></script>
+    <script src="./plugin/notes/notes.js"></script>
+    <script src="./plugin/math/math.js"></script>
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath
+        ]
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"transition":"fade"}, queryOptions);
+    </script>
+
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+</html>
